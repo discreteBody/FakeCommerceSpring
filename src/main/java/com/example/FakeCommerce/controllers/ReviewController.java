@@ -2,6 +2,7 @@ package com.example.FakeCommerce.controllers;
 
 import java.util.List;
 
+import com.example.FakeCommerce.services.ReviewService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,33 +19,35 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ReviewController {
 
+    private final ReviewService reviewService;
+
     @GetMapping
     public List<Review> getAllReviews() {
-        throw new UnsupportedOperationException("Not implemented");
+        reviewService.getAllReviews();
     }
 
     @PostMapping
     public Review createReview() {
-        throw new UnsupportedOperationException("Not implemented");
+        return reviewService.createReview();
     }
 
     @DeleteMapping("/{id}")
     public void deleteReview(@PathVariable Long id) {
-        throw new UnsupportedOperationException("Not implemented");
+        reviewService.deleteReview(id);
     }
 
     @GetMapping("/{id}")
     public Review getReviewById(@PathVariable Long id) {
-        throw new UnsupportedOperationException("Not implemented");
+        return  reviewService.getReviewById(id);
     }
 
     @GetMapping("/product/{productId}")
     public List<Review> getReviewsByProductId(@PathVariable Long productId) {
-        throw new UnsupportedOperationException("Not implemented");
+        return reviewService.getReviewsByProductId(productId);
     }
 
     @GetMapping("/order/{orderId}")
     public List<Review> getReviewsByOrderId(@PathVariable Long orderId) {
-        throw new UnsupportedOperationException("Not implemented");
+        return reviewService.getReviewsByOrderId(orderId);
     }
 }

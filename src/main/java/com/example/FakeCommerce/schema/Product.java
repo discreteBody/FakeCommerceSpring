@@ -41,6 +41,7 @@ public class Product extends BaseEntity {
     private Category category;
 
     private String image;
-
-    private String rating;
+    
+    @Column(nullable = false)
+    private BigDecimal rating;
 }

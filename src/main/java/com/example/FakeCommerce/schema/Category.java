@@ -6,9 +6,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import org.hibernate.annotations.Collate;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
@@ -22,6 +24,7 @@ import jakarta.persistence.Table;
 @SQLRestriction("deleted_at IS NULL")
 public class Category extends BaseEntity {
 
+    @Column(nullable = false)
     private String name;
     
 }

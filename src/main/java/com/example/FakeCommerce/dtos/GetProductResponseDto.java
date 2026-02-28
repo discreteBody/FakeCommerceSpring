@@ -23,6 +23,6 @@ public class GetProductResponseDto {
 
     private String image;
 
-    private String rating;
+    private BigDecimal rating;
 
 }

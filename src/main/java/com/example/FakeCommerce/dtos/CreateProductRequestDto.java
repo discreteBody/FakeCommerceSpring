@@ -2,6 +2,7 @@ package com.example.FakeCommerce.dtos;
 
 import java.math.BigDecimal;
 
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,5 +24,5 @@ public class CreateProductRequestDto {
 
     private Long categoryId;
 
-    private String rating;
+    private BigDecimal rating;
 }
